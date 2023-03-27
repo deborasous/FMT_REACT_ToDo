@@ -6,9 +6,8 @@ const CardAdd = (props) => {
   function handleAddTask(e) {
     e.preventDefault();
     if (text != "") {
-      console.log(text);
       setText("");
-      props.whenCreateTask(text);
+      props.whenAddTask(text);
     } else {
       alert("crie uma tarefa");
     }
@@ -30,6 +29,7 @@ const CardAdd = (props) => {
       >
         Criar Tarefa
       </button>
+      <p>{text}</p>
     </div>
   );
 };
