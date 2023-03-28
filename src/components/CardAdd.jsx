@@ -14,9 +14,9 @@ const CardAdd = (props) => {
   }
 
   return (
-    <div>
+    <div className="input-group flex-nowrap mb-3">
       <input
-        className="px-3 py-2 rounded-3"
+        className="form-control "
         placeholder="Criar a tarefa"
         type="text"
         id="text"
@@ -24,12 +24,11 @@ const CardAdd = (props) => {
         onChange={(e) => setText(e.target.value)}
       />
       <button
-        className="btn py-2 m-lg-3 btn-outline-success text-light"
+        className="btn py-2 m-0 btn-outline-success text-light"
         onClick={handleAddTask}
       >
         Criar Tarefa
       </button>
-      <p>{text}</p>
     </div>
   );
 };

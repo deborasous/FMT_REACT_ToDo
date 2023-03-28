@@ -11,14 +11,18 @@ function App() {
   function createTask(text) {
     const task = { id: tasks.length + 0, text: text, checked: false };
     setTasks([...tasks, task]);
-    console.log(text, "textttt");
+  }
+
+  function deleteTask(id) {
+    let tempTask = tasks.filter((task) => task.id !== id);
+    setTasks(tempTask);
   }
 
   return (
     <div className="App">
       <CardAdd whenAddTask={createTask} />
       {tasks.map((task) => (
-        <ListItem key={task.id} task={(tasks, task)} />
+        <ListItem key={task.id} task={task} deleteTask={deleteTask} />
       ))}
     </div>
   );
